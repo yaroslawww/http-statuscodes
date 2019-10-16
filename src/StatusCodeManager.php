@@ -1,8 +1,6 @@
 <?php
 
-
 namespace HttpStatusCodes;
-
 
 use ReflectionClass;
 
@@ -35,7 +33,6 @@ class StatusCodeManager
         }
     }
 
-
     /**
      * @param string|int $code
      * @return StatusCode|null
@@ -44,7 +41,7 @@ class StatusCodeManager
     public function makeStatusCode($code): ?StatusCode
     {
         if (is_int($code)) {
-            if (!isset($this->statusWithConstantsName[$code])) {
+            if (! isset($this->statusWithConstantsName[$code])) {
                 return null;
             }
             $code = $this->statusWithConstantsName[$code];
@@ -52,7 +49,7 @@ class StatusCodeManager
 
         $rc = new ReflectionClass($this->statusCodesClass);
         $constantInfo = $rc->getReflectionConstant($code);
-        if(!$constantInfo) {
+        if (! $constantInfo) {
             return null;
         }
         preg_match_all('#@(.*?)( )(.*?)?\n#s', $constantInfo->getDocComment(), $annotations);
@@ -60,7 +57,7 @@ class StatusCodeManager
 
         $filteredAnnotation['code'] = $constantInfo->getValue();
 
-        if (!isset($filteredAnnotation['message'])) {
+        if (! isset($filteredAnnotation['message'])) {
             $text = str_replace('HTTP_', '', $code);
             $text = strtolower($text);
             $text = str_replace('_', '_', $text);
@@ -69,5 +66,4 @@ class StatusCodeManager
 
         return new StatusCode($filteredAnnotation);
     }
-
 }

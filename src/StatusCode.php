@@ -1,8 +1,6 @@
 <?php
 
-
 namespace HttpStatusCodes;
-
 
 class StatusCode implements Contracts\StatusCode
 {
@@ -18,10 +16,9 @@ class StatusCode implements Contracts\StatusCode
     {
         $this->message = $data['message'];
         $this->code = $data['code'];
-        $this->description = $data['description']?$data['description']:'';
-        $this->rfcNumber = $data['rfc']?$data['rfc']:0;
+        $this->description = $data['description'] ? $data['description'] : '';
+        $this->rfcNumber = $data['rfc'] ? $data['rfc'] : 0;
     }
-
 
     public function getMessage(): string
     {

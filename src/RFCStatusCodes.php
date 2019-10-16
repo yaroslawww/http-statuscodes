@@ -3,10 +3,9 @@
 namespace HttpStatusCodes;
 
 /**
- * Full info you can find https://tools.ietf.org/html/rfc2616
+ * Full info you can find https://tools.ietf.org/html/rfc2616.
  *
  * Class RFCCodes
- * @package HttpStatusCodes
  */
 class RFCStatusCodes
 {
@@ -341,7 +340,7 @@ class RFCStatusCodes
     /**
      * @rfc 2616
      * @description  The server is currently unable to handle the request due to a
-    temporary overloading or maintenance of the server.
+     * temporary overloading or maintenance of the server.
      */
     const HTTP_SERVICE_UNAVAILABLE = 503;
 
