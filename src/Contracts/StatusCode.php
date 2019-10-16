@@ -4,7 +4,6 @@ namespace HttpStatusCodes\Contracts;
 
 interface StatusCode
 {
-
     public function getMessage(): string;
 
     public function getCode(): int;

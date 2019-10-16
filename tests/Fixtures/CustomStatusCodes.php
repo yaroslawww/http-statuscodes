@@ -2,7 +2,6 @@
 
 namespace HttpStatusCodes\Tests\Fixtures;
 
-
 use HttpStatusCodes\RFCStatusCodes;
 
 class CustomStatusCodes extends RFCStatusCodes
@@ -19,5 +18,4 @@ class CustomStatusCodes extends RFCStatusCodes
      * @message New-OK
      */
     const HTTP_NEW_OK = 3333;
-
 }
