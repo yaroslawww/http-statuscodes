@@ -6,7 +6,9 @@
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yaroslav.georgitsa@gmail.com"
+            "email": "yaroslav.georgitsa@gmail.com",
+            "homepage": "https://yaroslawww.github.io",
+            "role": "Developer"
         }
     ],
     "require": {
