@@ -1,0 +1,42 @@
+{
+    "name": "yaroslawww/http-statuscodes",
+    "description": "PHP library for handling HTTP status codes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yaroslav Georgitsa",
+            "email": "yaroslav.georgitsa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.5",
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "HttpStatusCodes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "src/",
+            "tests/"
+        ],
+        "psr-4": {
+            "HttpStatusCodes\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix"
+    },
+    "minimum-stability": "dev"
+}
