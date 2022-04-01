@@ -14,10 +14,10 @@ class StatusCode implements Contracts\StatusCode
      */
     public function __construct($data)
     {
-        $this->message = $data['message'];
-        $this->code = $data['code'];
+        $this->message     = $data['message'];
+        $this->code        = $data['code'];
         $this->description = $data['description'] ? $data['description'] : '';
-        $this->rfcNumber = $data['rfc'] ? $data['rfc'] : 0;
+        $this->rfcNumber   = $data['rfc'] ? $data['rfc'] : 0;
     }
 
     public function getMessage(): string

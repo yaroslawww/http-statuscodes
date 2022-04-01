@@ -3,8 +3,8 @@
 namespace HttpStatusCodes\Tests\Unit;
 
 use HttpStatusCodes\StatusCode;
-use HttpStatusCodes\Tests\TestCase;
 use HttpStatusCodes\StatusCodeManager;
+use HttpStatusCodes\Tests\TestCase;
 
 class StatusCodeManagerTest extends TestCase
 {
@@ -13,7 +13,7 @@ class StatusCodeManagerTest extends TestCase
      */
     public function get_status_code_from_int()
     {
-        $manager = new StatusCodeManager();
+        $manager    = new StatusCodeManager();
         $statusCode = $manager->makeStatusCode(200);
         $this->assertEquals(StatusCode::class, get_class($statusCode));
     }
@@ -23,7 +23,7 @@ class StatusCodeManagerTest extends TestCase
      */
     public function get_status_code_from_string()
     {
-        $manager = new StatusCodeManager();
+        $manager    = new StatusCodeManager();
         $statusCode = $manager->makeStatusCode('HTTP_OK');
         $this->assertEquals(StatusCode::class, get_class($statusCode));
     }
@@ -33,7 +33,7 @@ class StatusCodeManagerTest extends TestCase
      */
     public function error_if_not_valid_string()
     {
-        $manager = new StatusCodeManager();
+        $manager    = new StatusCodeManager();
         $statusCode = $manager->makeStatusCode('HTTP_OKAY');
         $this->assertNull($statusCode);
     }
@@ -43,7 +43,7 @@ class StatusCodeManagerTest extends TestCase
      */
     public function error_if_not_valid_int()
     {
-        $manager = new StatusCodeManager();
+        $manager    = new StatusCodeManager();
         $statusCode = $manager->makeStatusCode(999);
         $this->assertNull($statusCode);
     }

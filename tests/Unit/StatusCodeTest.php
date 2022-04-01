@@ -2,8 +2,8 @@
 
 namespace HttpStatusCodes\Tests\Unit;
 
-use HttpStatusCodes\Tests\TestCase;
 use HttpStatusCodes\StatusCodeManager;
+use HttpStatusCodes\Tests\TestCase;
 
 class StatusCodeTest extends TestCase
 {
@@ -12,7 +12,7 @@ class StatusCodeTest extends TestCase
      */
     public function get_status_code_from_int()
     {
-        $manager = new StatusCodeManager();
+        $manager    = new StatusCodeManager();
         $statusCode = $manager->makeStatusCode(201);
         $this->assertEquals('Created', $statusCode->getMessage());
         $this->assertEquals(201, $statusCode->getCode());
